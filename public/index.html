@@ -4,27 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08070e">
-  <title>GTA 6 &amp; PS5 Gaming Cafe Anand Vihar | Nexic Lounge Delhi</title>
-  <meta name="description" content="Get ready for GTA VI at Nexic Lounge in Anand Vihar. Register your interest for PS5 story sessions, PIN-protected saves and a launch-week offer. Free to join.">
+  <title>Delhi's GTA 6-Exclusive Lounge | Nexic Lounge Anand Vihar</title>
+  <meta name="description" content="Delhi's GTA VI-exclusive gaming lounge is coming to Anand Vihar. Play in 4K, keep your story progress ready for return visits, and register free for launch updates.">
   <meta name="keywords" content="Nexic Lounge, GTA 6 gaming cafe, PS5 gaming cafe Delhi, gaming lounge Anand Vihar, play GTA 6 Delhi, PlayStation cafe near me, gaming parlour East Delhi">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  <link rel="canonical" href="https://nexiclounge.me/">
+  <link rel="canonical" href="https://www.nexic.me/">
   <meta name="geo.region" content="IN-DL">
   <meta name="geo.placename" content="Anand Vihar, Delhi">
   <meta name="geo.position" content="28.6502;77.3150">
   <meta name="ICBM" content="28.6502, 77.3150">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Nexic Lounge">
-  <meta property="og:title" content="Play GTA 6 on PS5 at Nexic Lounge Anand Vihar | Get 25% Off">
-  <meta property="og:description" content="Get ready for GTA VI on PS5 in Anand Vihar. Register your interest for launch-week story sessions at Nexic Lounge.">
-  <meta property="og:url" content="https://nexiclounge.me/">
+  <meta property="og:title" content="Delhi's One-and-Only GTA VI Lounge | Nexic Lounge">
+  <meta property="og:description" content="GTA VI is coming to PS5 on 19 November 2026. Register free for launch updates from Delhi's GTA VI-exclusive gaming lounge in Anand Vihar.">
+  <meta property="og:url" content="https://www.nexic.me/">
   <meta property="og:locale" content="en_IN">
   <meta property="og:image" content="https://www.rockstargames.com/VI/_next/static/media/Official_Cover_Art_landscape.12.uu2irr.2_a.jpg?imwidth=1200">
   <meta property="og:image:alt" content="Official Grand Theft Auto VI cover artwork by Rockstar Games">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Play GTA 6 on PS5 at Nexic Lounge Anand Vihar | Get 25% Off">
-  <meta name="twitter:description" content="Get ready for GTA VI on PS5 in Anand Vihar. Register your interest for launch-week story sessions at Nexic Lounge.">
+  <meta name="twitter:title" content="Delhi's One-and-Only GTA VI Lounge | Nexic Lounge">
+  <meta name="twitter:description" content="GTA VI is coming to PS5 on 19 November 2026. Register free for launch updates from Delhi's GTA VI-exclusive gaming lounge in Anand Vihar.">
   <meta name="twitter:image" content="https://www.rockstargames.com/VI/_next/static/media/Official_Cover_Art_landscape.12.uu2irr.2_a.jpg?imwidth=1200">
+  <meta name="twitter:image:alt" content="Official Grand Theft Auto VI cover artwork by Rockstar Games">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -64,12 +65,48 @@
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 6rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--vice) var(--panel);
     }
 
+    html::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    html::-webkit-scrollbar-track {
+      background: var(--panel);
+      border-left: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    html::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--vice), var(--purple), var(--cyber));
+      border: 2px solid var(--panel);
+      border-radius: 999px;
+    }
+
+    html::-webkit-scrollbar-thumb:hover {
+      background: var(--cyber);
+    }
+
+    html,
     body {
       background: var(--obsidian);
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
+    }
+
+    html,
+    html *,
+    *::before,
+    *::after {
+      cursor: url('cursors/nexic-grey-pistol.png') 12 1, url('cursors/nexic-grey-pistol.cur') 12 1, default !important;
+    }
+
+    :is(a, button, select, input, label, [role="button"]),
+    :is(a, button, select, input, label, [role="button"]) *,
+    :is(a, button, select, input, label, [role="button"])::before,
+    :is(a, button, select, input, label, [role="button"])::after {
+      cursor: url('cursors/nexic-pink-pointer.png') 14 5, url('cursors/nexic-pink-pointer.cur') 14 5, pointer !important;
     }
 
     ::selection {
@@ -140,7 +177,7 @@
     .artwork-card::after {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(8, 7, 14, .05) 20%, rgba(8, 7, 14, .92) 100%);
+      background: linear-gradient(180deg, rgba(8, 7, 14, .01) 42%, rgba(8, 7, 14, .18) 100%);
       content: '';
       pointer-events: none;
     }
@@ -149,6 +186,35 @@
       background: linear-gradient(145deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .025));
       border: 1px solid rgba(255, 255, 255, .13);
       box-shadow: inset 0 1px rgba(255, 255, 255, .06);
+      perspective: 500px;
+    }
+
+    .countdown-value {
+      display: inline-block;
+      transform-origin: 50% 45%;
+      backface-visibility: hidden;
+    }
+
+    .countdown-value.is-flipping {
+      animation: digit-flip .52s cubic-bezier(.2, .72, .25, 1);
+    }
+
+    @keyframes digit-flip {
+      0% { opacity: 1; transform: rotateX(0); }
+      42% { opacity: .25; transform: rotateX(-88deg); }
+      58% { opacity: .25; transform: rotateX(88deg); }
+      100% { opacity: 1; transform: rotateX(0); }
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .neon-button:focus-visible,
@@ -238,6 +304,11 @@
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
       }
+
+      .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
   <script type="application/ld+json">
@@ -245,8 +316,8 @@
       "@context": "https://schema.org",
       "@type": "EntertainmentBusiness",
       "name": "Nexic Lounge",
-      "url": "https://nexiclounge.me/",
-      "description": "Premium PlayStation 5 gaming lounge and cafe in Anand Vihar specializing in immersive 4K story campaign gaming.",
+      "url": "https://www.nexic.me/",
+      "description": "An upcoming GTA VI-exclusive gaming lounge in Anand Vihar, Delhi, with PlayStation 5 and 4K gaming.",
       "priceRange": "₹₹",
       "address": {
         "@type": "PostalAddress",
@@ -261,7 +332,12 @@
         "latitude": 28.6502,
         "longitude": 77.315
       },
-      "openingHours": "Mo-Su 11:00-23:00"
+      "event": {
+        "@type": "VideoGame",
+        "name": "Grand Theft Auto VI",
+        "gamePlatform": ["PlayStation 5", "PlayStation 5 Pro"],
+        "datePublished": "2026-11-19"
+      }
     }
   </script>
   <script type="application/ld+json">
@@ -271,26 +347,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Can I save my GTA 6 story progress across multiple visits?",
+          "name": "When does GTA VI release, and which PlayStation consoles is it coming to?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Every regular customer gets a dedicated local PS5 user profile locked with a 4-digit PIN, so your GTA 6 story progress stays isolated and untouched between visits."
+            "text": "GTA VI releases 19 November 2026 for PS5 and PS5 Pro. Our countdown targets midnight IST; the official unlock time has not been announced."
           }
         },
         {
           "@type": "Question",
-          "name": "Where exactly is Nexic Lounge located in Anand Vihar?",
+          "name": "How long is the GTA VI story campaign?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nexic Lounge is planned near Anand Vihar Metro Station in East Delhi, close to the Blue and Pink Lines and ISBT. Exact venue details will be shared as launch approaches."
+            "text": "Rockstar has not announced a completion time. Nexic plans for 80+ hours for the full story and side content; actual playtime varies. PIN-protected saves are planned for return visits."
           }
         },
         {
           "@type": "Question",
-          "name": "Do I need to own a PlayStation account or buy the game?",
+          "name": "Who are the main characters in GTA VI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Nexic Lounge provides the PS5 hardware, game access, and controllers. You do not need to buy a console or game disc to play."
+            "text": "GTA VI is a single-player story about Jason and Lucia, set in Leonida and Vice City."
           }
         },
         {
@@ -298,7 +374,7 @@
           "name": "How do I claim the 25% discount?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Register your name, WhatsApp number, campaign plan, preferred slot, and anticipated arrival using the form. If you are among the first 50 registrations, your saved VIP pass confirms a 25% discount on launch-week passes. No payment is required."
+            "text": "Join the free interest list. The first 50 unique registrations are eligible for the planned 25% launch-week offer. This is not a booking."
           }
         }
       ]
@@ -309,7 +385,7 @@
   <div id="preloader" class="preloader fixed inset-0 z-[100] flex items-center justify-center" role="status" aria-live="polite" aria-label="Loading Nexic Lounge">
     <div class="relative z-10 w-[min(86vw,420px)] text-center">
       <p class="display-font text-3xl font-black tracking-[.22em] text-white sm:text-4xl">NEXIC<span class="text-vice">.</span></p>
-      <p class="mt-2 text-[10px] font-bold tracking-[.2em] text-cyber">PS5 BATTLEGROUND // EAST DELHI</p>
+      <p class="mt-2 text-[10px] font-bold tracking-[.2em] text-cyber">GTA VI EXCLUSIVE // EAST DELHI</p>
       <div class="mt-9 flex items-center justify-between font-mono text-xs">
         <span id="loader-status" class="text-white/55">ESTABLISHING NEXIC PROTOCOL...</span>
         <span id="loader-percent" class="tabular-nums text-cyber">0%</span>
@@ -329,15 +405,8 @@
 
   <header class="fixed inset-x-0 top-0 z-50 border-b border-white/[.07] bg-obsidian/75 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-      <a href="#home" class="group flex shrink-0 items-center gap-3" aria-label="Nexic Lounge home">
-        <span class="relative flex h-10 w-10 items-center justify-center rounded-xl border border-vice/30 bg-vice/10">
-          <i class="fa-solid fa-gamepad text-lg text-vice" aria-hidden="true"></i>
-          <span class="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full border-2 border-obsidian bg-cyber shadow-[0_0_10px_#00f5d4]"></span>
-        </span>
-        <span>
-          <span class="display-font block text-sm font-black leading-none tracking-[.14em] sm:text-base">NEXIC</span>
-          <span class="mt-1 block text-[9px] font-bold tracking-[.25em] text-white/55">LOUNGE</span>
-        </span>
+      <a href="#home" class="display-font shrink-0 text-base font-black tracking-[.16em] sm:text-lg" aria-label="Nexic Lounge home">
+        NEXIC <span class="text-white/55">LOUNGE</span>
       </a>
       <div class="hidden items-center gap-2 rounded-full border border-white/10 bg-white/[.04] px-3 py-2 text-xs text-white/65 md:flex">
         <i class="fa-solid fa-location-dot text-vice" aria-hidden="true"></i>
@@ -345,13 +414,12 @@
       </div>
       <a href="#media" class="hidden text-xs font-bold text-white/60 transition hover:text-white lg:inline-flex">Explore GTA VI</a>
       <a href="#register" class="neon-button inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-vice to-purple px-4 py-2.5 text-xs font-extrabold tracking-wide sm:px-5 sm:text-sm">
-        <span>Claim Priority Pass</span>
-        <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+          <span>Join launch list</span>
       </a>
     </div>
     <div class="flex items-center justify-center gap-2 border-t border-white/[.04] py-2 text-[9px] font-bold tracking-[.22em] text-white/40 md:hidden">
       <i class="fa-solid fa-location-dot text-vice" aria-hidden="true"></i>
-      <span>ANAND VIHAR, EAST DELHI · NEAR METRO</span>
+      <span>ANAND VIHAR, EAST DELHI · LAUNCHING NOV 2026</span>
     </div>
   </header>
 
@@ -367,35 +435,35 @@
               <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-vice opacity-60"></span>
               <span class="relative inline-flex h-2 w-2 rounded-full bg-vice"></span>
             </span>
-            DAY-ONE GTA VI EXPERIENCE IN EAST DELHI
+            GTA VI · ANAND VIHAR
           </div>
           <h1 class="display-font max-w-3xl text-[2.35rem] font-black leading-[1.14] tracking-[-.055em] sm:text-5xl lg:text-[3.7rem] xl:text-[4.15rem]">
-            Experience <span class="neon-text">GTA 6</span> on PS5 in Anand Vihar at Nexic Lounge
+            Delhi's <span class="neon-text">GTA VI</span> Lounge
           </h1>
           <p class="mt-6 max-w-2xl text-sm leading-7 text-white/65 sm:text-base sm:leading-8">
-            East Delhi's flagship 4K PlayStation 5 battle lounge. 55-inch HDR displays, spatial sound, and dedicated PIN-locked profiles so your 50-hour story campaign never gets overwritten.
+            GTA VI on PS5, in 4K. Opening in Anand Vihar with PIN-protected story saves for your return visits.
           </p>
           <div class="mt-7 flex max-w-2xl items-start gap-3 rounded-xl border border-amber/25 bg-amber/[.07] p-4 sm:p-5">
             <span class="mt-0.5 text-xl" aria-hidden="true">🔥</span>
             <p class="text-xs leading-6 text-amber-50/90 sm:text-sm">
-              <span class="font-extrabold text-amber">Exclusive Pre-Launch Offer:</span>
-              The first 50 saved registrations get 25% off launch-week passes.
+              <span class="font-extrabold text-amber">First 50 registrations:</span>
+              eligible for the planned 25% launch-week offer. Free interest list; not a booking.
             </p>
           </div>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a href="#register" class="neon-button inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-vice via-[#e00094] to-purple px-6 text-sm font-extrabold tracking-wide">
-              <span>Save my free priority pass</span>
+              <span>Join the free list</span>
               <i class="fa-solid fa-arrow-down text-xs" aria-hidden="true"></i>
             </a>
             <span class="flex items-center justify-center gap-2 text-xs text-white/45 sm:justify-start">
               <i class="fa-solid fa-circle-check text-cyber" aria-hidden="true"></i>
-              <span>Free registration · No payment required</span>
+              <span>No payment · No booking</span>
             </span>
           </div>
           <div class="mt-10 flex flex-wrap gap-x-7 gap-y-3 border-t border-white/10 pt-6 text-[10px] font-bold tracking-[.1em] text-white/40">
-            <span><i class="fa-solid fa-tv mr-2 text-cyber" aria-hidden="true"></i>4K HDR DISPLAYS</span>
-            <span><i class="fa-solid fa-shield-halved mr-2 text-vice" aria-hidden="true"></i>PIN-LOCKED SAVES</span>
-            <span><i class="fa-solid fa-headphones mr-2 text-amber" aria-hidden="true"></i>SPATIAL AUDIO</span>
+            <span><i class="fa-solid fa-tv mr-2 text-cyber" aria-hidden="true"></i>4K GAMING · PS5 &amp; PS5 PRO</span>
+            <span><i class="fa-solid fa-user-group mr-2 text-vice" aria-hidden="true"></i>JASON &amp; LUCIA</span>
+            <span><i class="fa-solid fa-location-dot mr-2 text-amber" aria-hidden="true"></i>ANAND VIHAR</span>
           </div>
         </div>
 
@@ -403,14 +471,13 @@
           <div class="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-vice/15 via-purple/15 to-cyber/10 blur-2xl" aria-hidden="true"></div>
           <div class="glass relative overflow-hidden rounded-[2rem] p-3 sm:p-4">
             <div class="artwork-card relative flex aspect-[4/4.1] flex-col overflow-hidden rounded-[1.45rem] border border-white/10 p-5 sm:p-7" style="background-image: url('https://www.rockstargames.com/VI/_next/static/media/poster_full.0az_iud2g3y4j.jpg?imwidth=1000');">
-              <div class="absolute inset-0 bg-gradient-to-b from-[#08070e]/65 via-transparent to-[#08070e]/80" aria-hidden="true"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-[#08070e]/0 via-transparent to-[#08070e]/25" aria-hidden="true"></div>
               <div class="relative flex items-center justify-between">
-                <span class="rounded-full border border-white/20 bg-obsidian/60 px-3 py-1.5 text-[9px] font-extrabold tracking-[.18em] text-white backdrop-blur">THE NEXT CHAPTER</span>
+                <span class="rounded-full border border-white/20 bg-obsidian/60 px-3 py-1.5 text-[9px] font-extrabold tracking-[.18em] text-white backdrop-blur">PLAYSTATION 5 · PS5 PRO</span>
                 <span class="rounded-full bg-vice px-2 py-1 text-[9px] font-extrabold tracking-wider text-white">2026</span>
               </div>
               <div class="relative mt-auto pt-40">
-                <p class="editorial-label text-cyber">Official Rockstar Games artwork</p>
-                <p class="display-font mt-3 text-2xl font-black leading-tight tracking-[.09em] sm:text-3xl">YOUR STORY.<br>YOUR SAVE.</p>
+                <p class="display-font text-2xl font-black leading-tight tracking-[.09em] sm:text-3xl">YOUR STORY.<br>YOUR SAVE.</p>
                 <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 border-b border-white/50 pb-1 text-xs font-bold text-white transition hover:border-cyber hover:text-cyber">
                   <span>Explore the official GTA VI site</span>
                   <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i>
@@ -437,25 +504,25 @@
             <div>
               <p class="editorial-label text-cyber">THE CLOCK IS RUNNING / 01</p>
               <h2 id="countdown-title" class="display-font mt-4 text-2xl font-black leading-tight sm:text-3xl">Until Leonida <span class="neon-text">opens up.</span></h2>
-              <p class="mt-4 max-w-md text-sm leading-7 text-white/60">GTA VI is scheduled for <strong class="text-white">19 November 2026</strong>. Your next story starts here in Anand Vihar.</p>
-              <p class="mt-3 text-[11px] leading-5 text-white/40">Release date from Rockstar Games. Countdown runs to 12:00 AM IST; this is not a confirmed game unlock time.</p>
+              <p class="mt-4 max-w-md text-sm leading-7 text-white/60">GTA VI arrives <strong class="text-white">19 November 2026</strong> on PS5 and PS5 Pro.</p>
+              <p class="mt-3 text-[11px] leading-5 text-white/40">Countdown targets midnight IST, not an announced unlock time.</p>
             </div>
             <div>
               <div id="launch-countdown" class="grid grid-cols-4 gap-2 sm:gap-3" role="timer" aria-label="Time until GTA VI releases" aria-live="off">
                 <div class="countdown-cell rounded-xl py-4 text-center sm:py-6">
-                  <span id="countdown-days" class="display-font block text-xl font-bold tabular-nums text-white sm:text-4xl">--</span>
+                  <span id="countdown-days" class="countdown-value display-font block text-xl font-bold tabular-nums text-white sm:text-4xl">--</span>
                   <span class="mt-2 block text-[8px] font-bold uppercase tracking-widest text-white/45 sm:text-[10px]">Days</span>
                 </div>
                 <div class="countdown-cell rounded-xl py-4 text-center sm:py-6">
-                  <span id="countdown-hours" class="display-font block text-xl font-bold tabular-nums text-white sm:text-4xl">--</span>
+                  <span id="countdown-hours" class="countdown-value display-font block text-xl font-bold tabular-nums text-white sm:text-4xl">--</span>
                   <span class="mt-2 block text-[8px] font-bold uppercase tracking-widest text-white/45 sm:text-[10px]">Hours</span>
                 </div>
                 <div class="countdown-cell rounded-xl py-4 text-center sm:py-6">
-                  <span id="countdown-minutes" class="display-font block text-xl font-bold tabular-nums text-white sm:text-4xl">--</span>
+                  <span id="countdown-minutes" class="countdown-value display-font block text-xl font-bold tabular-nums text-white sm:text-4xl">--</span>
                   <span class="mt-2 block text-[8px] font-bold uppercase tracking-widest text-white/45 sm:text-[10px]">Minutes</span>
                 </div>
                 <div class="countdown-cell rounded-xl py-4 text-center sm:py-6">
-                  <span id="countdown-seconds" class="display-font block text-xl font-bold tabular-nums text-vice sm:text-4xl">--</span>
+                  <span id="countdown-seconds" class="countdown-value display-font block text-xl font-bold tabular-nums text-vice sm:text-4xl">--</span>
                   <span class="mt-2 block text-[8px] font-bold uppercase tracking-widest text-white/45 sm:text-[10px]">Seconds</span>
                 </div>
               </div>
@@ -472,10 +539,10 @@
           <div>
             <p class="editorial-label text-vice">A GLIMPSE OF LEONIDA / 02</p>
             <h2 id="media-title" class="display-font mt-4 text-2xl font-bold sm:text-3xl">See what we're <span class="neon-text">waiting for.</span></h2>
-            <p class="mt-4 max-w-xl text-sm leading-7 text-white/55">Official GTA VI media from Rockstar Games. The visuals belong to Rockstar; the launch-week plans are ours.</p>
+            <p class="mt-4 max-w-xl text-sm leading-7 text-white/55">Official Rockstar Games trailers and screenshots.</p>
           </div>
           <a href="https://www.rockstargames.com/VI/media" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-cyber transition hover:text-white">
-            <span>Visit Rockstar's media gallery</span>
+            <span>More from Rockstar</span>
             <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i>
           </a>
         </div>
@@ -522,38 +589,36 @@
         <div class="mx-auto max-w-2xl text-center">
           <p class="text-[10px] font-extrabold tracking-[.28em] text-cyber">BUILT FOR THE LONG GAME</p>
           <h2 id="why-title" class="display-font mt-4 text-2xl font-bold leading-snug sm:text-3xl">Your campaign. <span class="neon-text">Your rules.</span></h2>
-          <p class="mt-4 text-sm leading-7 text-white/55">Settle in for the story. We've got the hardware, your save file, and the seat.</p>
         </div>
         <div class="mt-12 grid gap-4 md:grid-cols-3 md:gap-5">
           <article class="glass group rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:border-vice/30 sm:p-7">
             <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-vice/20 bg-vice/10 text-xl text-vice"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-            <p class="mt-6 text-[9px] font-extrabold tracking-[.2em] text-vice">01 // YOUR STORY IS SAFE</p>
-            <h3 class="display-font mt-3 text-base font-bold leading-relaxed">Zero Progress Loss <span class="text-white/55">(PIN-Protected Saves)</span></h3>
-            <p class="mt-4 text-sm leading-7 text-white/55">Every regular customer gets a dedicated local PS5 user profile locked with a 4-digit PIN. Your GTA 6 story progress stays isolated and untouched.</p>
+            <p class="mt-6 text-[9px] font-extrabold tracking-[.2em] text-vice">01 // DUAL PROTAGONISTS</p>
+            <h3 class="display-font mt-3 text-base font-bold leading-relaxed">Jason, Lucia &amp; Leonida</h3>
+            <p class="mt-4 text-sm leading-7 text-white/55">Follow Jason and Lucia through Vice City and the wider state of Leonida. Your PIN-protected save is planned to be ready for return visits.</p>
           </article>
           <article class="glass group rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:border-cyber/30 sm:p-7">
             <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-cyber/20 bg-cyber/10 text-xl text-cyber"><i class="fa-solid fa-headphones-simple" aria-hidden="true"></i></div>
-            <p class="mt-6 text-[9px] font-extrabold tracking-[.2em] text-cyber">02 // EVERY DETAIL LANDS</p>
-            <h3 class="display-font mt-3 text-base font-bold leading-relaxed">Flagship 4K HDR &amp; Spatial Audio</h3>
-            <p class="mt-4 text-sm leading-7 text-white/55">55'' low-latency gaming panels paired with 3D audio headsets and ergonomic seating for comfortable multi-hour grinds.</p>
+            <p class="mt-6 text-[9px] font-extrabold tracking-[.2em] text-cyber">02 // MADE FOR PLAYSTATION</p>
+            <h3 class="display-font mt-3 text-base font-bold leading-relaxed">4K Display. PS5 Immersion.</h3>
+            <p class="mt-4 text-sm leading-7 text-white/55">4K displays with PS5 Tempest 3D Audio, DualSense haptics and adaptive triggers.</p>
           </article>
           <article class="glass group rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:border-amber/30 sm:p-7">
             <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-amber/20 bg-amber/10 text-xl text-amber"><i class="fa-solid fa-ticket" aria-hidden="true"></i></div>
-            <p class="mt-6 text-[9px] font-extrabold tracking-[.2em] text-amber">03 // JUST SHOW UP</p>
-            <h3 class="display-font mt-3 text-base font-bold leading-relaxed">Walk-in &amp; Play <span class="text-white/55">(Zero Console Cost)</span></h3>
-            <p class="mt-4 text-sm leading-7 text-white/55">No need to buy a ₹50,000 console or the ₹5,000 game disc. Nexic Lounge provides the hardware, licenses, and controllers.</p>
+            <p class="mt-6 text-[9px] font-extrabold tracking-[.2em] text-amber">03 // LEONIDA, TOGETHER</p>
+            <h3 class="display-font mt-3 text-base font-bold leading-relaxed">A GTA VI-Exclusive Lounge</h3>
+            <p class="mt-4 text-sm leading-7 text-white/55">A lounge dedicated to GTA VI, planned for Anand Vihar. Get opening and booking updates.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section id="register" class="relative scroll-mt-24 py-20 sm:py-24" aria-labelledby="register-title">
-      <div class="absolute inset-x-0 top-1/2 -z-10 h-[75%] -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(121,40,202,.12),transparent_65%)]" aria-hidden="true"></div>
-      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
-          <p class="text-[10px] font-extrabold tracking-[.28em] text-vice">THE CITY IS WAITING</p>
-          <h2 id="register-title" class="display-font mt-4 text-2xl font-bold leading-snug sm:text-4xl">Save your seat in <span class="neon-text">the story.</span></h2>
-          <p class="mt-4 text-sm leading-7 text-white/55">Tell us how you want to play. Registration is free, and your VIP pass locks in the launch offer.</p>
+          <p class="text-[10px] font-extrabold tracking-[.28em] text-vice">GET THE FIRST UPDATE</p>
+          <h2 id="register-title" class="display-font mt-4 text-2xl font-bold leading-snug sm:text-4xl">Be ready for <span class="neon-text">launch day.</span></h2>
+          <p class="mt-4 text-sm leading-7 text-white/55">Free launch updates. No booking or payment.</p>
         </div>
 
         <div class="relative mx-auto mt-10 max-w-3xl rounded-[1.6rem] bg-gradient-to-br from-vice/45 via-purple/45 to-cyber/40 p-px shadow-[0_0_60px_rgba(121,40,202,.14)] sm:mt-12">
@@ -562,7 +627,7 @@
               <div class="mb-8 flex items-center justify-between gap-4 border-b border-white/10 pb-5">
                 <div>
                   <p class="display-font text-xs font-bold tracking-[.18em] text-white sm:text-sm">PRIORITY PASS REGISTRATION</p>
-                  <p class="mt-2 text-[11px] text-white/45">Takes less than a minute. No payment, no commitment.</p>
+              <p class="mt-2 text-[11px] text-white/45">Join the launch interest list</p>
                 </div>
                 <div class="hidden h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyber/20 bg-cyber/[.08] text-cyber sm:flex"><i class="fa-solid fa-id-card" aria-hidden="true"></i></div>
               </div>
@@ -581,9 +646,9 @@
                   <label for="campaign" class="mb-2 block text-xs font-bold text-white/80">Story campaign plan <span class="text-vice">*</span></label>
                   <select id="campaign" name="campaign" required class="w-full rounded-xl border border-white/10 bg-[#08070e]/70 px-4 py-3.5 text-sm text-white">
                     <option value="" disabled selected>Select your play style</option>
-                    <option>Casual Exploration (5–10 Hours)</option>
-                    <option>Main Story Campaign (15–30 Hours)</option>
-                    <option>100% Completionist Grind (40+ Hours)</option>
+                    <option>Story + side content (80+ hours, Nexic planning estimate)</option>
+                    <option>Pick up my story across return visits</option>
+                    <option>Still deciding</option>
                   </select>
                 </div>
                 <div>
@@ -620,14 +685,14 @@
                 <span id="submit-label">SAVE MY FREE PRIORITY PASS</span>
                 <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
               </button>
-              <p class="mt-4 text-center text-[10px] leading-5 text-white/40"><i class="fa-solid fa-lock mr-1 text-cyber" aria-hidden="true"></i> Your details are saved for launch updates only. Free to join; no payment required.</p>
+              <p class="mt-4 text-center text-[10px] leading-5 text-white/40"><i class="fa-solid fa-lock mr-1 text-cyber" aria-hidden="true"></i> Used for lounge launch updates only.</p>
             </form>
 
             <div id="pass-result" class="hidden" aria-live="polite">
               <div class="ticket-reveal mx-auto max-w-xl rounded-2xl border border-cyber/25 bg-[#08070e]/75 p-5 shadow-[0_0_40px_rgba(0,245,212,.08)] sm:p-7">
                 <div class="flex items-start justify-between gap-4 border-b border-dashed border-white/15 pb-5">
                   <div>
-                    <p class="text-[9px] font-extrabold tracking-[.22em] text-cyber">INTEREST SAVED TO OUR LIST</p>
+                    <p id="pass-result-status" class="text-[9px] font-extrabold tracking-[.22em] text-cyber">INTEREST SAVED TO OUR LIST</p>
                     <h3 class="display-font mt-2 text-sm font-black tracking-[.12em] sm:text-base">NEXIC LOUNGE VIP LAUNCH PASS</h3>
                   </div>
                   <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vice/20 bg-vice/10 text-vice"><i class="fa-solid fa-ticket" aria-hidden="true"></i></span>
@@ -651,7 +716,7 @@
                     <dd id="pass-campaign" class="mt-1 text-xs leading-5 text-white/80"></dd>
                   </div>
                 </dl>
-                <p class="mt-6 text-center text-xs leading-6 text-white/55">Registration saved. Keep your pass ID handy; we'll use your WhatsApp number to share launch details when they're ready.</p>
+                    <p id="pass-result-message" class="mt-6 text-center text-xs leading-6 text-white/55"></p>
               </div>
             </div>
           </div>
@@ -669,39 +734,39 @@
           <article class="faq-item glass rounded-xl" data-open="false">
             <h3>
               <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-sm font-bold leading-6 sm:px-6" type="button" aria-expanded="false" aria-controls="faq-answer-1">
-                <span>Can I save my GTA 6 story progress across multiple visits?</span>
+                <span>When does GTA VI release, and which PlayStation consoles is it coming to?</span>
                 <i class="faq-icon fa-solid fa-plus shrink-0 text-xs text-cyber" aria-hidden="true"></i>
               </button>
             </h3>
             <div id="faq-answer-1" class="faq-answer" inert>
               <div>
-                <p class="px-5 pb-5 text-sm leading-7 text-white/55 sm:px-6">Yes. Every regular customer gets a dedicated local PS5 user profile locked with a 4-digit PIN, so your GTA 6 story progress stays isolated and untouched between visits.</p>
+                <p class="px-5 pb-5 text-sm leading-7 text-white/55 sm:px-6">19 November 2026 for PS5 and PS5 Pro. Our countdown targets midnight IST; the official unlock time hasn't been announced.</p>
               </div>
             </div>
           </article>
           <article class="faq-item glass rounded-xl" data-open="false">
             <h3>
               <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-sm font-bold leading-6 sm:px-6" type="button" aria-expanded="false" aria-controls="faq-answer-2">
-                <span>Where exactly is Nexic Lounge located in Anand Vihar?</span>
+                <span>How long is the GTA VI story campaign?</span>
                 <i class="faq-icon fa-solid fa-plus shrink-0 text-xs text-cyber" aria-hidden="true"></i>
               </button>
             </h3>
             <div id="faq-answer-2" class="faq-answer" inert>
               <div>
-                <p class="px-5 pb-5 text-sm leading-7 text-white/55 sm:px-6">Nexic Lounge is planned near Anand Vihar Metro Station in East Delhi, close to the Blue and Pink Lines and ISBT. Exact venue details will be shared as launch approaches.</p>
+                <p class="px-5 pb-5 text-sm leading-7 text-white/55 sm:px-6">Rockstar hasn't announced a completion time. We plan for 80+ hours for the full story and side content; actual playtime varies. PIN-protected saves are planned for return visits.</p>
               </div>
             </div>
           </article>
           <article class="faq-item glass rounded-xl" data-open="false">
             <h3>
               <button class="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-sm font-bold leading-6 sm:px-6" type="button" aria-expanded="false" aria-controls="faq-answer-3">
-                <span>Do I need to own a PlayStation account or buy the game?</span>
+                <span>Is GTA VI a single-player game, and who is it about?</span>
                 <i class="faq-icon fa-solid fa-plus shrink-0 text-xs text-cyber" aria-hidden="true"></i>
               </button>
             </h3>
             <div id="faq-answer-3" class="faq-answer" inert>
               <div>
-                <p class="px-5 pb-5 text-sm leading-7 text-white/55 sm:px-6">No. Nexic Lounge provides the PS5 hardware, game access, and controllers. You do not need to buy a console or game disc to play.</p>
+                <p class="px-5 pb-5 text-sm leading-7 text-white/55 sm:px-6">It's a single-player story about Jason and Lucia, set in Leonida and Vice City.</p>
               </div>
             </div>
           </article>
@@ -714,11 +779,27 @@
             </h3>
             <div id="faq-answer-4" class="faq-answer" inert>
               <div>
-                <p class="px-5 pb-5 text-sm leading-7 text-white/55 sm:px-6">Register your name, WhatsApp number, campaign plan, preferred slot, and anticipated arrival using the form. If you are among the first 50 registrations, your saved VIP pass confirms a 25% discount on launch-week passes. No payment is required.</p>
+                <p class="px-5 pb-5 text-sm leading-7 text-white/55 sm:px-6">Join the free interest list. The first 50 unique registrations are eligible for the planned 25% launch-week offer. This isn't a booking.</p>
               </div>
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="pb-20 pt-8 sm:pb-28" aria-labelledby="concept-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-7 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="editorial-label text-cyber">A LOOK AHEAD</p>
+            <h2 id="concept-title" class="display-font mt-3 text-2xl font-bold sm:text-3xl">The lounge, imagined.</h2>
+          </div>
+          <p class="text-xs text-white/50">AI-generated concept · Not the finished venue</p>
+        </div>
+        <figure class="overflow-hidden rounded-2xl border border-white/10 bg-panel">
+          <img src="lounge-concept.webp" alt="AI-generated concept illustration of a possible Nexic Lounge interior; the final venue may look different" width="1536" height="1024" loading="lazy" decoding="async" class="block h-auto w-full">
+          <figcaption class="border-t border-white/10 px-5 py-4 text-xs text-white/50 sm:px-6">A visual concept only. The final lounge may differ.</figcaption>
+        </figure>
       </div>
     </section>
   </main>
@@ -728,14 +809,10 @@
       <div class="flex flex-col gap-7 md:flex-row md:items-start md:justify-between">
         <div>
           <a href="#home" class="display-font text-sm font-black tracking-[.18em]">NEXIC <span class="text-vice">LOUNGE</span></a>
-          <p class="mt-3 flex items-start gap-2 text-xs leading-6 text-white/50">
-            <i class="fa-solid fa-location-dot mt-1 text-cyber" aria-hidden="true"></i>
-            <span>Within 5 minutes of Anand Vihar Metro Station (Blue &amp; Pink Lines) and ISBT.</span>
-          </p>
+          <p class="mt-3 text-xs leading-6 text-white/50">Anand Vihar, East Delhi · Near Metro &amp; ISBT</p>
         </div>
         <div class="max-w-2xl">
-          <p class="text-[10px] leading-6 text-white/45">Your name, WhatsApp number and session preferences are stored to manage launch interest and contact you about Nexic Lounge. No payment is collected.</p>
-          <p class="mt-2 text-[10px] leading-6 text-white/35">Official GTA VI artwork and video posters courtesy of Rockstar Games. Nexic Lounge is an independent entertainment venture. Grand Theft Auto, GTA VI, PlayStation, and PS5 are registered trademarks of their respective owners.</p>
+          <p class="text-[10px] leading-6 text-white/40">Your contact details are used for launch updates only. Official game artwork by Rockstar Games. Cursor artwork by <a class="underline decoration-white/20 underline-offset-2 hover:text-cyber" href="https://sweezy-cursors.com/" target="_blank" rel="noopener noreferrer">Sweezy Cursors</a>. Nexic Lounge is independent and not affiliated with Rockstar Games or PlayStation.</p>
         </div>
       </div>
       <div class="mt-8 flex flex-col gap-2 border-t border-white/[.07] pt-5 text-[9px] tracking-wide text-white/30 sm:flex-row sm:items-center sm:justify-between">
@@ -783,6 +860,7 @@
       // Rockstar lists 19 November 2026; midnight IST is a date marker, not a confirmed unlock time.
       const launchDate = new Date('2026-11-19T00:00:00+05:30').getTime();
       const countdownElements = ['days', 'hours', 'minutes', 'seconds'].map((unit) => document.getElementById(`countdown-${unit}`));
+      const previousCountdownValues = new Map();
       const updateCountdown = () => {
         const remaining = Math.max(0, launchDate - Date.now());
         const days = Math.floor(remaining / 86400000);
@@ -790,7 +868,16 @@
         const minutes = Math.floor((remaining % 3600000) / 60000);
         const seconds = Math.floor((remaining % 60000) / 1000);
         [days, hours, minutes, seconds].forEach((value, index) => {
-          countdownElements[index].textContent = String(value).padStart(2, '0');
+          const element = countdownElements[index];
+          const nextValue = String(value).padStart(2, '0');
+          const previousValue = previousCountdownValues.get(element);
+          element.textContent = nextValue;
+          if (previousValue !== undefined && previousValue !== nextValue) {
+            element.classList.remove('is-flipping');
+            void element.offsetWidth;
+            element.classList.add('is-flipping');
+          }
+          previousCountdownValues.set(element, nextValue);
         });
         if (remaining === 0) {
           document.getElementById('countdown-status').textContent = 'THE RELEASE DATE IS HERE · CHECK ROCKSTAR FOR AVAILABILITY';
@@ -798,6 +885,22 @@
       };
       updateCountdown();
       window.setInterval(updateCountdown, 1000);
+
+      const revealTargets = document.querySelectorAll('#countdown .glass, #media .group, #why-title, #register .glass, .faq-item');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+        revealTargets.forEach((element) => {
+          element.classList.add('reveal-on-scroll');
+          revealObserver.observe(element);
+        });
+      }
 
       document.querySelectorAll('.faq-item button').forEach((button) => {
         button.addEventListener('click', () => {
@@ -864,10 +967,16 @@
           document.getElementById('pass-slot').textContent = saved.slot;
           document.getElementById('pass-campaign').textContent = saved.campaign;
           document.getElementById('pass-offer').textContent = saved.discountEligible
-            ? '25% DISCOUNT LOCKED // ANAND VIHAR'
+            ? '25% LAUNCH OFFER ELIGIBILITY SAVED'
             : 'PRIORITY INTEREST SAVED // ANAND VIHAR';
           document.getElementById('pass-offer').classList.toggle('text-cyber', saved.discountEligible);
           document.getElementById('pass-offer').classList.toggle('text-amber', !saved.discountEligible);
+          document.getElementById('pass-result-status').textContent = saved.discountEligible
+            ? 'EARLY INTEREST SAVED'
+            : 'INTEREST SAVED TO OUR LIST';
+          document.getElementById('pass-result-message').textContent = saved.discountEligible
+            ? 'Your interest is recorded and marked eligible for the planned 25% launch-week offer. This pass is not a booking; we will share final lounge and booking details before launch.'
+            : 'Your interest is recorded. The first 50 unique registrations are marked eligible for the planned 25% launch-week offer. This pass is not a booking; we will share final lounge and booking details before launch.';
           form.classList.add('hidden');
           result.classList.remove('hidden');
           document.getElementById('register-title').scrollIntoView({ behavior: 'smooth', block: 'start' });

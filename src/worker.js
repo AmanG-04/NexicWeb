@@ -1,7 +1,7 @@
 const campaigns = new Set([
-  'Casual Exploration (5–10 Hours)',
-  'Main Story Campaign (15–30 Hours)',
-  '100% Completionist Grind (40+ Hours)'
+  'Story + side content (80+ hours, Nexic planning estimate)',
+  'Pick up my story across return visits',
+  'Still deciding'
 ]);
 
 const slots = new Set([
