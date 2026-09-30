@@ -236,6 +236,41 @@
       pointer-events: none;
     }
 
+    .preloader {
+      display: none;
+      background: radial-gradient(ellipse at 50% 42%, #241039 0%, #10091d 45%, #08070e 100%);
+      pointer-events: none;
+    }
+
+    .preloader.is-active {
+      display: flex;
+      animation: loader-dismiss 3s linear forwards;
+    }
+
+    .preloader::after {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(to bottom, transparent 0, transparent 3px, rgba(0, 0, 0, .3) 4px, rgba(0, 0, 0, .3) 5px);
+      content: '';
+      pointer-events: none;
+    }
+
+    .loader-bar {
+      background: linear-gradient(90deg, var(--vice), var(--purple), var(--cyber));
+      box-shadow: 0 0 20px rgba(0, 245, 212, .55);
+      animation: loader-progress 2.4s linear forwards;
+    }
+
+    @keyframes loader-progress {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes loader-dismiss {
+      0%, 80% { opacity: 1; visibility: visible; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+
     .faq-answer {
       display: grid;
       grid-template-rows: 0fr;
@@ -286,6 +321,10 @@
 
       .reveal-on-scroll.is-visible {
         animation: none;
+      }
+
+      .preloader.is-active {
+        display: none;
       }
     }
   </style>
@@ -360,6 +399,52 @@
   </script>
 </head>
 <body class="text-white antialiased">
+  <div id="preloader" class="preloader fixed inset-0 z-[100] items-center justify-center" aria-hidden="true" inert>
+    <div class="relative z-10 w-[min(86vw,420px)] text-center">
+      <p class="display-font text-3xl font-black tracking-[.22em] text-white sm:text-4xl">
+        NEXIC
+        <span class="text-vice">.</span>
+      </p>
+      <p class="mt-2 text-[10px] font-bold tracking-[.2em] text-cyber">GTA VI EXCLUSIVE // EAST DELHI</p>
+      <div class="mt-9 flex items-center justify-between font-mono text-xs">
+        <span id="loader-status" class="text-white/55">ESTABLISHING NEXIC PROTOCOL...</span>
+        <span id="loader-percent" class="tabular-nums text-cyber">0%</span>
+      </div>
+      <div class="mt-3 h-[3px] overflow-hidden rounded-full bg-white/10">
+        <div class="loader-bar h-full w-0 rounded-full"></div>
+      </div>
+      <p class="mt-5 text-[9px] tracking-[.28em] text-white/30">BOOT SEQUENCE // 001</p>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const preloader = document.getElementById('preloader');
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+      // Activate only with JavaScript; CSS independently dismisses the overlay.
+      preloader.classList.add('is-active');
+      const startTime = performance.now();
+      const updateLoader = (now) => {
+        const progress = Math.min((now - startTime) / 2400, 1);
+        document.getElementById('loader-percent').textContent = `${Math.floor(progress * 100)}%`;
+        document.getElementById('loader-status').textContent = progress < 0.52
+          ? 'ESTABLISHING NEXIC PROTOCOL...'
+          : 'INITIALIZING ANAND VIHAR PS5 NODES...';
+        if (progress < 1) {
+          requestAnimationFrame(updateLoader);
+        }
+      };
+      requestAnimationFrame(updateLoader);
+      preloader.addEventListener('animationend', (event) => {
+        if (event.animationName === 'loader-dismiss') {
+          preloader.classList.remove('is-active');
+        }
+      });
+      window.setTimeout(() => preloader.classList.remove('is-active'), 3200);
+    })();
+  </script>
+
   <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
     <div class="site-grid absolute inset-0"></div>
     <div class="orb -left-40 top-24 h-80 w-80 bg-purple/20"></div>
