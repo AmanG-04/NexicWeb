@@ -110,6 +110,36 @@ function createDatabase() {
   };
 }
 
+describe('canonical hostname routing', () => {
+  it('permanently redirects apex requests while preserving paths and queries', async () => {
+    for (const path of ['/', '/robots.txt', '/sitemap.xml', '/favicon_io/favicon.ico', '/api/leads', '/offers%20soon?ref=launch&ref=metro&next=%2Fregister']) {
+      for (const protocol of ['http', 'https']) {
+        const response = await worker.fetch(new Request(`${protocol}://nexic.me${path}`), {});
+        assert.equal(response.status, 301);
+        assert.equal(response.headers.get('Location'), `https://www.nexic.me${path}`);
+      }
+    }
+  });
+
+  it('serves www and development assets without redirecting or changing the request', async () => {
+    for (const url of ['https://www.nexic.me/', 'https://www.nexic.me/sitemap.xml', 'http://localhost:8787/']) {
+      const request = new Request(url);
+      const assetResponse = new Response('asset');
+      const response = await worker.fetch(request, {
+        ASSETS: {
+          fetch(received) {
+            assert.equal(received, request);
+            return assetResponse;
+          }
+        }
+      });
+      assert.equal(response, assetResponse);
+    }
+    const config = JSON.parse(fs.readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8'));
+    assert.equal(config.assets.run_worker_first, true);
+  });
+});
+
 function submit(db, payload = defaultInput, { origin = 'https://www.nexic.me', method = 'POST' } = {}) {
   const request = new Request('https://www.nexic.me/api/leads', {
     method,

@@ -32,7 +32,14 @@ function normalizePhone(value) {
 
 export default {
   async fetch(request, env) {
-    const pathname = new URL(request.url).pathname;
+    const url = new URL(request.url);
+    if (url.hostname === 'nexic.me') {
+      url.protocol = 'https:';
+      url.hostname = 'www.nexic.me';
+      url.port = '';
+      return Response.redirect(url.href, 301);
+    }
+    const pathname = url.pathname;
 
     if (pathname !== '/api/leads') {
       if (pathname.startsWith('/api/')) {

@@ -6,7 +6,7 @@ Single-page landing site with a Cloudflare Worker and D1-backed launch-interest 
 
 The production D1 database `nexicweb-leads` has been created. Its ID and the Worker name `nexicweb` are configured in `wrangler.jsonc`.
 
-The public canonical URL is `https://www.nexic.me/`. Keep this hostname attached to the `nexicweb` Worker when deploying; the browser submits leads to the same origin. `public/robots.txt` advertises `https://www.nexic.me/sitemap.xml`, which contains the homepage. After deployment, verify both files are served at those URLs and submit the sitemap through the `https://www.nexic.me/` property in Google Search Console. At the time this was updated, the apex `https://nexic.me/` showed a separate portfolio page; only redirect the apex if that page is intentionally being retired.
+The public canonical URL is `https://www.nexic.me/`. Keep both `nexic.me` and `www.nexic.me` attached to the `nexicweb` Worker when deploying. The Worker permanently redirects the apex hostname to HTTPS www with a 301, preserving paths and query strings. Assets run through the Worker first so this redirect also applies to static pages and files; www requests are served by the assets binding, and the browser submits leads to the same origin. `public/robots.txt` advertises `https://www.nexic.me/sitemap.xml`, which contains the homepage. After deployment, verify both files are served at those URLs and submit the sitemap through the `https://www.nexic.me/` property in Google Search Console.
 
 1. Install the Wrangler CLI if needed: `npm install --global wrangler` (or use an existing installation).
 2. Log in: `wrangler login`.
